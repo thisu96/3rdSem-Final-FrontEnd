@@ -1,0 +1,97 @@
+<!-- <app-nav-bar></app-nav-bar>
+<body style="margin-top: 75px;">
+  <form class="form" style="margin-top: 40px; height: 550px;" #frmCheckout="ngForm">
+  
+    <div class="billing-num">1</div>
+    <div class="billing-text">Billing Address</div>
+  
+    <div id="first" class="form-group has-feedback" [class.has-error]="fullbillFirstNameControll.invalid && fullbillFirstNameControll.touched" [class.has-success]="fullbillFirstNameControll.valid">
+      <input required id="customerName" name="customerName" [(ngModel)]="txtFirst" type="text" class="form-control" #fullbillFirstNameControll="ngModel" placeholder="Customer Name" value="{{customer.userName}}" disabled>
+      <span style="font-size: 13px" class="help-block" *ngIf="fullbillFirstNameControll.invalid && fullbillFirstNameControll.touched">Customer Name is required</span>
+    </div>
+  
+    <div class="form-group has-feedback" [class.has-error]="fullBillConNoControll.invalid && fullBillConNoControll.touched" [class.has-success]="fullBillConNoControll.valid">
+      <input required id="txtNumber" name="txtNumber" pattern="^\d{4}-\d{3}-\d{3}$" [(ngModel)]="txtNumber" type="text" class="form-control" #fullBillConNoControll="ngModel" 
+       placeholder="Contact Number"value="{{customer.contact}}" disabled>
+      <span style="font-size: 13px" class="help-block" *ngIf="fullBillConNoControll.errors?.required && fullBillConNoControll.touched">Contact number is required</span>
+      <span style="font-size: 13px" class="help-block" *ngIf="fullBillConNoControll.errors?.pattern && fullBillConNoControll.touched">Contact number is invalid (ex : 0777-123-456)</span>
+    </div>
+  
+    <div class="form-group has-feedback" [class.has-error]="fulBilllemailControll.invalid && fulBilllemailControll.touched" [class.has-success]="fulBilllemailControll.valid">
+      <input required id="txtEmail" name="txtEmail" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" [(ngModel)]="txtEmail" type="email" class="form-control" #fulBilllemailControll="ngModel"
+       placeholder="E-mail"value="{{customer.email}}" disabled>
+      <span style="font-size: 13px" class="help-block" *ngIf="fulBilllemailControll.errors?.required && fulBilllemailControll.touched">E-mail is required</span>
+      <span style="font-size: 13px" class="help-block" *ngIf="fulBilllemailControll.errors?.pattern && fulBilllemailControll.touched">E-mail is invalid (ex : amali@gmail.com)</span>
+    </div>
+  
+    <div  class="form-group has-feedback" [class.has-error]="fullBillCityControll.invalid && fullBillCityControll.touched" [class.has-success]="fullBillCityControll.valid">
+      <input required id="txtCity" name="txtCity" [(ngModel)]="txtCity" type="text" class="form-control" #fullBillCityControll="ngModel" placeholder="Town" value="{{customer.address}}" disabled>
+      <span style="font-size: 13px;" class="help-block" *ngIf="fullBillCityControll.invalid && fullBillCityControll.touched">Address is required</span>
+    </div>
+    <div  class="form-group has-feedback" [class.has-error]="fullAddressControll.invalid && fullAddressControll.touched">
+      <textarea required id="txtDel" name="txtDel" [(ngModel)]="txtDel" type="text" class="form-control" #fullAddressControll="ngModel" placeholder="Delivery Address"></textarea>
+      <span style="font-size: 13px" class="help-block" *ngIf="fullAddressControll.invalid && fullAddressControll.touched">Delivery Address is required</span>
+    </div>
+
+  
+    <hr class="horizontalLine" style="margin-top: -30%; height: 530px;">
+  
+    <div class="deliveryMethod" style="margin-top: -48%;">
+      <div class="billing-num">2</div>
+      <div class="billing-text">Delivery Method</div>
+  
+      <div id="subtopic1">**Please use Sri Lanka Standard Times</div>
+  
+      <div class="subtopic2">Delivery</div>
+  
+      <div class="subtopic3">Pickup Hours - 9.30 am to 3.00 pm & 6.30 pm to 8.30 pm</div>
+  
+      <div class="lktRadio">
+        <input type="radio" name="pickup"  checked>Delivery - LKR 300.00<br>
+      </div>
+  
+      <div class="deliveryInfo">
+        <label style="margin-top: 10px">Delivery Date</label>
+        <input  name="txtDate" type="date" class="form-control" >
+        <label style="margin-top: 10px">Delivery Time</label>
+        <input  name="txtTime" type="time" class="form-control" >
+      </div>
+  
+      <hr style="margin-top: -330px; margin-left: 370px; margin-top: -40%; height: 530px;" class="horizontalLine">
+    </div>
+  
+    <div class="preview" style="margin-top: -48%;">
+      <div class="billing-num">
+        <i class="fa fa-eye"></i>
+      </div>
+      <div class="billing-text">Review</div>
+  
+      <div class="tblpreview">
+        <table id="tblCart" class="table table-bordered table-hover">
+          <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Unit Price</th>
+            <th>Quntity</th>
+            <th>Sub Total</th>
+          </tr>
+          </thead>
+        </table>
+  
+        <label style="font-size: 12px; margin-left: 120px">Sub Total : </label>
+        <input type="text" class="form-control" style="font-size: 12px; margin-left: 115px; width: 25%;" id="txtSubTot" type="text">
+  
+        <label style="font-size: 12px; margin-left: 120px">Service Charge : </label>
+        <input type="text" class="form-control" style="font-size: 12px; margin-left: 115px; width: 25%;" id="txtDeliveryTip" type="text">
+  
+        <label style="font-size: 12px; margin-left: 120px">Grand Total : </label>
+        <input type="text" class="form-control" style="font-size: 12px; margin-left: 115px; width: 25%;" id="txtGrandTotal" type="text">
+      </div>
+  
+      <div>
+        <button id="btnSubmit" type="submit" class="btn btn-primary btn-block btn-flat" [disabled]="frmCheckout.invalid">Place Order</button>
+      </div>
+    </div>
+  </form>
+  </body><br><br>
+<app-footer></app-footer>   -->

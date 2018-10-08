@@ -1,0 +1,15 @@
+<mat-toolbar class="mat-toolbar" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"s>
+  <mat-toolbar-row>
+    <span class="span-spacer"></span>
+    <span><img class="logo" src="../assets/images/logo.png"></span>
+    <ul class="mat-tab-nav-bar">
+      <button mat-button (click)="btnClick2()">Home</button>
+      <button mat-button (click)="btnClick5()">Veg & Fruits Cart</button>
+      <button mat-button (click)="btnClick()">About Us</button>
+      <button mat-button (click)="btnClick3()">Veg Price News</button>
+      <button mat-button (click)="btnClick4()">Contact Us</button>
+      <a routerLink="/item-list" routerLinkActive="active"><i class="fa fa-user">&nbsp;&nbsp;&nbsp;{{userName}}</i></a>
+    </ul>
+  </mat-toolbar-row>
+</mat-toolbar><br>
+

@@ -1,0 +1,22 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+  
+ }
+ .container {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* padding: 30px; */
+  }
+/* .card{
+    width: 300px;
+} */
+
+.btn{
+    background-color: lightblue;
+    width: 200px;
+    height: 50px;
+}

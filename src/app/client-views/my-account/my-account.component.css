@@ -1,0 +1,124 @@
+
+.form-group{
+  width: 305px;
+  height: 25px;
+  margin-left: 15px;
+  margin-top: 40px;
+}
+
+
+.form{
+  border: outset;
+  border-color: red;
+  margin-left: 100px;
+  width: 1150px;
+  height: 850px;
+
+}
+
+.billing-num{
+  margin-left: 10px;
+  margin-top: 12px;
+  -moz-border-radius: 0 3px 0 38px/0 26px 0 4px;
+  border: solid;
+  width: 40px;
+  text-align: center;
+  background-color: darkred;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  border-color: darkred;
+}
+
+.billing-text{
+  margin-left: 60px;
+  margin-top: -30px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+
+#subtopic1{
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.subtopic2{
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.subtopic3{
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.lktRadio{
+  margin-top: 12px;
+  font-size: 15px;
+  /*cursor: wait;*/
+  -moz-opacity:0.2;
+  -khtml-opacity:0.2;
+}
+
+.deliveryInfo{
+  width: 250px;
+}
+
+#first{
+  margin-top: 10px;
+  width: 300px;
+}
+
+#last{
+  width: 150px;
+  margin-left: 170px;
+  margin-top: -40px;
+}
+
+#delFirst{
+  margin-top: 10px;
+  width: 150px;
+}
+
+#delLast{
+  width: 150px;
+  margin-left: 170px;
+  margin-top: -40px;
+}
+
+.deliveryMethod{
+  margin-left: 385px;
+  margin-top: -825px;
+}
+
+.horizontalLine{
+  margin-left: 350px;
+  margin-top: -750px;
+  width: 2px;
+  height: 810px;
+  background-color: black;
+
+}
+
+.preview{
+  margin-left: 770px;
+  margin-top: -627px;
+}
+
+#btnSubmit{
+  width: 300px;
+  height: 40px;
+  margin-left: 30px;
+  margin-top: 100px;
+  background-color: red;
+  border-color: black;
+}
+
+#tblCart{
+  margin-top: 12px;
+  width: 360px;
+  font-size: 12px;
+}
+

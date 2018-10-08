@@ -1,0 +1,19 @@
+<div *ngIf="failed">
+  <mat-card>
+    <h4>Sign In with your Account</h4>
+    <form #frmLogin="ngForm" action="" method="post"
+    (ngSubmit)="loginDb()">
+      <p>
+        <input type="text" id="userName" name="userName" [(ngModel)]="employee.userName" placeholder="Enter Your User Name">
+      </p>
+      <p>
+        <input type="password" id="password" name="password" [(ngModel)]="employee.password" placeholder="Enter Your password">
+      </p>
+      <p style="margin-left: 30%;">
+        <button type="submit" class="btn btn btn-outline-primary waves-effect">SIGN-IN</button>
+        <button style="margin-left: 5%;" type="submit" class="btn btn btn-outline-warring waves-effect">
+            CANCEL</button>
+      </p>
+    </form>
+  </mat-card>
+</div>

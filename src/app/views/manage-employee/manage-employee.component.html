@@ -1,0 +1,123 @@
+<div class="main-panel">
+  <nav class="navbar navbar-default">
+      <div class="container-fluid">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar bar1"></span>
+                  <span class="icon-bar bar2"></span>
+                  <span class="icon-bar bar3"></span>
+              </button>
+              <a class="navbar-brand" href="#">MANAGE EMPLOYEE DEATAILS</a>
+          </div>
+          <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                  <li>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          <i class="ti-panel"></i>
+          <p>Stats</p>
+                      </a>
+                  </li>
+                  <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                              <i class="ti-bell"></i>
+                              <p class="notification">5</p>
+            <p>Notifications</p>
+            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Notification 1</a></li>
+                          <li><a href="#">Notification 2</a></li>
+                          <li><a href="#">Notification 3</a></li>
+                          <li><a href="#">Notification 4</a></li>
+                          <li><a href="#">Another notification</a></li>
+                        </ul>
+                  </li>
+      <li>
+                      <a href="#">
+          <i class="ti-settings"></i>
+          <p>Settings</p>
+                      </a>
+                  </li>
+              </ul>
+
+          </div>
+      </div>
+  </nav><br>
+      
+    <div class="container">
+      <div class="header" style="display: inline;">
+          <p style="color: blue; font-size: 20px;">
+             CREATE AN EMPLOYEE
+          <button style=" margin-left: 65%;" type="button" class="btn btn-default">CANCEL</button>
+          </p>
+      </div>
+      <hr style="width: 85%;">
+      <form action=""  #frmEmployee="ngForm" (ngSubmit)="saveEmployee()">
+        <div>
+          <p>
+            <input type="text" id="empName" name="empName" [(ngModel)]="selectedEmployee.empName" placeholder="Employee Name">
+          </p>
+          <p>
+            <input type="text" id="userName" name="userName" [(ngModel)]="selectedEmployee.userName" placeholder="User Name">
+            <img src="./assets/images/emp.jpg" style="float: right;">
+          </p>
+          <p>
+            <input type="text" id="address" name="address" [(ngModel)]="selectedEmployee.address" placeholder="Employee Address">
+          </p>
+          <p>
+            <input type="text" id="contact" name="contact" [(ngModel)]="selectedEmployee.contact" placeholder="Employee Contact">
+          </p>
+          <p>
+            <input type="text" id="email" name="email" [(ngModel)]="selectedEmployee.email" placeholder="Employee Email">
+          </p>
+          <p>
+            <input type="text" id="empSalary" name="empSalary" [(ngModel)]="selectedEmployee.empSalary" placeholder="Employee Salary">
+          </p>
+          <p>
+            <input type="password" id="password" name="password" [(ngModel)]="selectedEmployee.password" placeholder="Employee password">
+          </p>
+          <p>
+            <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="selectedEmployee.confirmPassword" placeholder="Confirm password">
+          </p>
+          <p>
+            <button style="margin-left: 30%;" type="submit" class="btn btn-primary">SAVE DETAILS</button>
+          </p>
+        </div>
+      </form>
+  </div>
+  <div class="container">
+    <div class="header">
+        <h4 style="color: blue">EMPLOYEE DETAILS</h4>
+    </div>
+    <hr style="width: 85%;">
+</div>
+<div class="table-responsive">          
+    <table class="table" id="tblEmployee">
+      <thead>
+        <tr>
+          <th>Emp Name</th>
+          <th>User Name</th>
+          <th>Address</th>
+          <th>Contact</th>
+          <th>Email</th>
+          <th>Salary</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let employee of employees"
+        (click)="selectEmployee(employee)" [class.selected]="employee==selectedEmployee">
+          <td>{{employee.empName}}</td>
+          <td>{{employee.userName}}</td>
+          <td>{{employee.address}}</td>
+          <td>{{employee.contact}}</td>
+          <td>{{employee.email}} York</td>
+          <td>{{employee.empSalary}}</td>
+          <td><i class="fa fa-trash-o" style="font-size:30px;" (click)="deleteEmployee(employee)"></i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+          
+</div>

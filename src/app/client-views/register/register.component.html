@@ -1,0 +1,64 @@
+<div>
+  <form #frmCustomer="ngForm" (ngSubmit)="saveCustomer()">
+    <mat-card style="height: 700px; margin-top: -2%;">
+      <h3>Register with us Now</h3>
+    <p class="has-feedback" [class.has-error]="fullNameControll.invalid && fullNameControll.touched" 
+    [class.has-success]="fullNameControll.valid">
+      <input type="text" id="customerName" name="customerName" pattern="^[a-zA-Z ][a-zA-Z0-9-_\.]{1,20}$"
+       [(ngModel)]="selectedCustomer.customerName" 
+      placeholder="Enter Your Full Name"#fullNameControll="ngModel" required>
+      <span style="font-size: 12px; color: red;" class="help-block" *ngIf="fullNameControll.invalid && fullNameControll.touched">Name is Required</span>
+      <span style="font-size: 12px; color: red;" class="help-block" *ngIf="fullNameControll.errors?.pattern && fullNameControll.touched">Please Match the Requested Format</span>
+    </p>
+    <p class="has-feedback" [class.has-error]="fullUserNameControll.invalid && fullUserNameControll.touched"
+     [class.has-success]="fullUserNameControll.valid">
+      <input type="text" id="userName" name="userName" pattern="^[a-zA-Z][a-zA-Z0-9-_\.,:]{1,8}$" [(ngModel)]="selectedCustomer.userName" 
+      placeholder="Enter Your User Name"#fullUserNameControll="ngModel" required>
+      <span style="font-size: 12px; color: red;" class="help-block" *ngIf="fullUserNameControll.invalid && fullUserNameControll.touched">Username is Required</span>
+      <span style="font-size: 12px; color: red;" class="help-block" *ngIf="fullUserNameControll.errors?.pattern && fullUserNameControll.touched">Please Match the Requested Format</span>
+    </p>
+    <p class="has-feedback" [class.has-error]="fullAddressControll.invalid && fullAddressControll.touched" [class.has-success]="fullAddressControll.valid">
+      <input type="text" id="address" name="address" pattern="^[a-zA-Z][a-zA-Z0-9-_\.,:]{1,200}$"
+       [(ngModel)]="selectedCustomer.address" 
+      placeholder="Enter Your Address"#fullAddressControll="ngModel" required>
+      <span style="font-size: 12px; color: red;" class="help-block" *ngIf="fullAddressControll.invalid && fullAddressControll.touched">Address is Required</span>
+      <span style="font-size: 12px; color: red;" class="help-block" *ngIf="fullAddressControll.errors?.pattern && fullAddressControll.touched">Please Match the Requested Format</span>
+    </p>
+    <p class="has-feedback" [class.has-error]="fullContactControll.invalid && fullContactControll.touched" [class.has-success]="fullContactControll.valid">
+      <input type="text" id="contact" name="contact" pattern="^\d{3}-\d{7}$" [(ngModel)]="selectedCustomer.contact" 
+      placeholder="Enter Your Contact No"#fullContactControll="ngModel" required>
+      <span style="font-size: 12px; color: red;" class="help-block" *ngIf="fullContactControll.errors?.required && fullContactControll.touched">Contact Number is Required</span>
+      <span style="font-size: 12px; color: red;" class="help-block" *ngIf="fullContactControll.errors?.pattern && fullContactControll.touched">Contact Number is Invalid (ex : 0**-****)</span>
+    </p>
+    <p>
+      <input type="text" id="email" name="email" [(ngModel)]="selectedCustomer.email" 
+      placeholder="Enter Your Email">
+    </p>
+    <p class="has-feedback" [class.has-error]="password.touched && password.invalid">
+      <input type="password" id="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+       name="password" [(ngModel)]="selectedCustomer.password" 
+      placeholder="Enter Your password" #password="ngModel" required>
+      <span class="help-block" *ngIf="password.touched && password.errors?.required" style="font-size: 12px;color: red;">Password is Required</span>
+      <span class="help-block" *ngIf="password.touched && password.errors?.pattern" style="font-size: 12px;color: red;">
+        Password must contain at least 8 characters, including UPPER/lowercase,Numbers & SpecialChar.
+      </span>
+    </p>
+    <p  class="has-feedback" [class.has-error]="confirmPassword.touched && confirmPassword.invalid">
+      <input type="password" id="confirmPassword" name="confirmPassword" appConfirmEqualValidator="password" 
+      [(ngModel)]="selectedCustomer.confirmPassword"
+       placeholder="Enter Your confirmPassword"#confirmPassword="ngModel" required>
+       <span class="help-block" *ngIf="confirmPassword.touched && confirmPassword.errors?.required" style="font-size: 12px;color: red;">
+         Plese fill out this field
+       </span>
+       <span class="help-block" *ngIf="confirmPassword.touched && confirmPassword.errors?.notEqual" style="font-size: 12px;color: red;">
+         Please Enter the same Password as above
+       </span>
+    </p>
+    <p style="margin-left: 35%;">
+      <button type="submit" class="btn btn btn-outline-success waves-effect">REGISTER</button>
+      <button style="margin-left: 5%;" type="submit" class="btn btn btn-outline-warring waves-effect">
+        CANCEL</button>
+    </p>
+  </mat-card>
+  </form>
+</div>

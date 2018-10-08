@@ -1,0 +1,163 @@
+<app-nav-bar></app-nav-bar><br><br><br><br>
+<div style="display: inline-flex">
+    <img src="../../../assets/images/user.png" style="width: 75px;height: 75px;">
+    <h4>WELCOME BACK &nbsp;&nbsp;&nbsp; {{userName}}</h4>
+</div><br>
+<input type="text" placeholder="SEARCH BY CATEGORY" class="form-group" style="width: 300px; margin-left: 10%"
+  [(ngModel)]="searchTerm">
+<div>
+  <h4 style="margin-left: 80%; color: green">Items In Your <i class="fa fa-shopping-cart"></i></h4>
+  <h3 class="lables" style="color: lightseagreen; margin-left: 10%">ITEMS LIST</h3>
+  <div class="table-responsive">          
+    <table class="table" id="tblItemList">
+      <thead>
+        <!-- <tr></tr> -->
+      </thead>
+      <tbody>
+          <th>ITEM VIEW</th>
+          <th>ITEM NAME</th>
+          <th>QUALITY</th>
+          <th>DESCRIPTION</th>
+          <th>CATEGORY</th>
+          <th>KILO PRICE</th>
+          <th>ORDER QTY(KG)</th>
+          <th>ORDER QTY(G)</th>
+        <tr *ngFor="let item of items  | categoryFilter: searchTerm | paginate: { itemsPerPage: 7, currentPage: p }">
+          <td><img src="{{item.imageUrl}}" style="width: 90px; height: 90px;"></td>
+          <td>{{item.itemName}}</td>
+          <td>{{item.quality}}</td>
+          <td>{{item.description}}</td>
+          <td>{{item.category}}</td>
+          <td>{{item.oneKiloPrice}}</td>
+          <td><input id="qty" #qty name="qty"  type="text" placeholder="KG"></td>
+          <td><input id="qty1" #qty1 name="qty1" type="text" placeholder="G"></td>
+          <td><button class="button button1" (click)="addToAccount(item,qty.value,qty1.value)"><img id="cart" src="../assets/images/cart2.png"></button></td>
+        </tr>
+      </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="4">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div >
+      <h4 class="lables">SHOPPING BAG</h4>
+      <hr>
+      <p class="lables">
+        <button type="button" class="btn btn-primary" (click)="btnClick()"><i class="glyphicon glyphicon-hand-left">
+          BACK TO SHOPPING</i></button>
+      </p>
+      <div style="margin-left: 70%" >
+          <button type="button" class="btn btn-primary" (click)="toggle()"> MAKE PAYMENY</button>&nbsp;
+          <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove-sign">
+            CANCEL ORDER</i></button>
+      </div>
+      </div>
+    </div>    
+    <div style="margin-top: 5%; width: 1345px;">
+        <ng-container *ngIf="show">
+            <h3 class="lables" style="color: lightseagreen">ITEMS ADDED TO YOUR SHOPPING BAG(3)</h3>
+          <form class="form" style="margin-top: 40px; height: 550px;" #frmCheckout="ngForm">
+    
+            <div class="billing-num">1</div>
+            <div class="billing-text">Billing Address</div>
+           <div style="margin-left: 5%;">
+             <p style="font-size: 18px; color: lightseagreen"><br>
+                <label><img src="../../../assets/images/customer.png" style="width: 45px;height: 45px;"></label>
+                <label>{{selectedCustomer.customerName}}</label>
+             </p>
+           </div>
+           <div>
+              <p style="font-size: 18px; color: lightseagreen">
+                 <label><img src="../../../assets/images/contact.png" style="width: 45px; height: 45px;"></label>
+                 <label>{{selectedCustomer.contact}}</label>
+              </p>
+            </div><br>
+            <div>
+                <p style="font-size: 18px; color: lightseagreen">
+                   <label><img src="../../../assets/images/email.png" style="width: 45px; height: 45px;"></label>
+                   <label>{{selectedCustomer.email}}</label>
+                </p>
+              </div><br>
+              <div>
+                  <p style="font-size: 18px; color: lightseagreen">
+                     <label><img src="../../../assets/images/location.png" style="width: 45px; height: 45px;"></label>
+                     <label>{{selectedCustomer.address}}</label>
+                  </p>
+                </div><br>
+                <div  class="form-group has-feedback" [class.has-error]="fullAddressControll.invalid && fullAddressControll.touched">
+                    <textarea required id="txtDel" name="txtDel" [(ngModel)]="txtDel" type="text" class="form-control" #fullAddressControll="ngModel" placeholder="Delivery Address"></textarea>
+                    <span style="font-size: 13px" class="help-block" *ngIf="fullAddressControll.invalid && fullAddressControll.touched">Delivery Address is required</span>
+                  </div>
+            <hr class="horizontalLine" style="margin-top: -32%; height: 515px;">
+          
+            <div class="deliveryMethod" style="margin-top: -40%;">
+              <div class="billing-num">2</div>
+              <div class="billing-text">Delivery Method</div>
+          
+              <div id="subtopic1">**Please use Sri Lanka Standard Times</div>
+          
+              <div class="subtopic2">Delivery</div>
+          
+              <div class="subtopic3">Pickup Hours - 9.30 am to 3.00 pm & 6.30 pm to 8.30 pm</div>
+          
+              <div class="lktRadio">
+                <input type="radio" name="pickup"  checked>Delivery - LKR 300.00<br>
+              </div>
+          
+              <div class="deliveryInfo">
+                <label style="margin-top: 10px" [(ngModel)]="selectOrder.orderDate">{{selectOrder.orderDate}}</label>
+                <input  name="txtDate" type="date" [(ngModel)]="selectOrder.orderDate" class="form-control" >
+                <label style="margin-top: 10px">Delivery Time</label>
+                <input  name="txtTime" type="time" class="form-control" >
+              </div>
+          
+              <hr style="margin-top: -330px; margin-left: 370px; margin-top: -32%; height: 517px;" class="horizontalLine">
+            </div>
+          
+            <div class="preview" style="margin-top: -40%; width: 500px;">
+              <div class="billing-num">3</div>
+          
+              <div class="table-responsive" style="width: 550px;">          
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Quality</th>
+                      <th>Description</th>
+                      <th>Category</th>
+                      <th>qty</th>
+                      <th>amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let orderDetail of orderDetails">
+                      <td>{{orderDetail.item.itemName}}</td>
+                      <td>{{orderDetail.item.quality}}</td>
+                      <td>{{orderDetail.item.description}}</td>
+                      <td>{{orderDetail.item.category}}</td>
+                      <td>{{orderDetail.order_qty}}</td>
+                      <td>{{orderDetail.total_amount}}</td>
+                      <td><button id="btnDelete"><img  id="delete" src="../assets/images/delete1.png"></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div style="margin-left: 50%; width: 350px;">
+                <input type="text" id="finaltotal" placeholder="total amount">
+              </div>
+              </div>
+          
+              <div>
+                <button id="btnSubmit" type="submit" class="btn btn-primary btn-block btn-flat"
+                style="margin-left: 950px" [disabled]="frmCheckout.invalid" (click)="placeOrder()">Place Order</button>
+              </div>
+            </form>
+          </ng-container>
+        </div><br><br>
+<app-footer></app-footer>

@@ -1,0 +1,70 @@
+<div class="wrapper">
+    <div class="sidebar" data-background-color="white" data-active-color="danger">
+  
+    <!--
+    Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+    Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+  -->
+  
+      <div class="sidebar-wrapper">
+            <div class="logo">
+                <a class="simple-text">
+                    ST VEG & FRUITS TRADERS
+                </a>
+            </div>
+  
+            <ul class="nav">
+                <li class="active">
+                    <a routerLink="/main/dashboard" routerLinkActive="active" href="#">
+                        <i class="fa fa-database"></i>
+                        <p>DASHBOARD</p>
+                    </a>
+                </li>
+                <li>
+                    <a  routerLink="/main/manage-item" routerLinkActive="active" href="#">
+                      <i class="fa fa-reorder"></i>
+                        <p>MANAGE ITEMS</p>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/main/manage-orders" routerLinkActive="active">
+                        <i class="fa fa-cubes"></i>
+                        <p>MANAGE ORDERS</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="fa fa-credit-card-alt"></i>
+                        <p>MANAGE PAYMENTS</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="fa fa-line-chart"></i>
+                        <p>VIEW SALES-CHART</p>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/main/manage-employee" routerLinkActive="active" href="#">
+                        <i class="fa fa-user-circle-o"></i>
+                        <p>MANAGE EMPLOYEES</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="fa fa-gears"></i>
+                        <p>SETTINGS</p>
+                    </a>
+                </li>
+        <li class="active-pro">
+                    <a>
+                        <i class="fa fa-sign-out"></i>
+                        <p>SIGN-OUT</p>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+         </div>
+         <router-outlet></router-outlet>
+        

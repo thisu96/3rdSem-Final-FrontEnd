@@ -1,0 +1,15 @@
+.mat-tab-nav-bar{
+    margin-left: 25%;
+}
+
+.logo{
+    margin-top: -5%;
+    margin-bottom: 25%;
+    width: -320px;
+    height: 300px;
+}
+
+.mat-toolbar{
+    overflow: hidden;
+    position: fixed;
+}

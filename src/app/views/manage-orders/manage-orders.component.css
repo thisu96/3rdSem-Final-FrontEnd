@@ -1,0 +1,319 @@
+.table-responsive{
+    width: 80%;
+    margin-left: 15%;
+}
+
+#tblItemList tbody{
+    background-color: white;
+  }
+  
+  #tblItemList tr{
+    cursor: pointer;
+  }
+  
+  #tblItemList tr th:first-child, #tblItemList tr td:first-child{
+    text-align: center;
+  }
+  
+  #tblEmployee tr td:last-child{
+    text-align: center;
+  }
+  
+  #tblItemList tr td:last-child:hover{
+    color: red;
+  }
+  
+  .my-account{
+    margin-top: 5%;
+}
+
+.lables{
+    margin-left: 10%;
+}
+
+.table-responsive{
+    margin-left: 3%;
+    width: 90%;
+}
+
+html, body {
+    background-color: #ecf0f1;
+    margin: 20px auto;
+    display: block;
+    max-width: 600px;
+    height: 100%;
+    text-align: center;
+  }
+  
+  body {
+    padding: 20px;
+    position: relative;
+  }
+  h2, a, p, *:before,h1 {
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 300;
+  }
+  h1 {
+    color: #3498db;
+  }
+  
+  h2 {
+    color: #2980b9;
+    margin-top: 0;
+    font-size: 20px;
+    background-color: white;
+    height: 24px;
+    text-align: center;
+    padding: 16px;
+    z-index: 15;
+    border-radius: 4px;
+  
+    transition: all 2s ease-out;
+  }
+  
+  p {
+   display: block; 
+    width: 100%;
+    color: #2c3e50;
+    clear: both;
+  }
+  .description {
+    margin-bottom: 70px;
+  }
+  
+  button {
+    border: 0;
+    background-color: #3498db;
+    color: white;
+    border-radius: 4px;
+    padding: 5px 10px;
+    transition: background-color 0.2s ease-out;
+   
+   
+    cursor: pointer;
+  }
+  
+  /* button:hover {
+    background-color: #2980b9;
+  } */
+  button:active, button:hover {
+    outline: none;
+  }
+  
+  a {
+    color: #2c3e50;
+    transition: color 0.2s ease-out;
+    /*padding: 5px 10px;*/
+    margin-right: 16px;
+  }
+  
+  a:hover {
+    color: #2ecc71;
+  }
+  
+  /* .wrapper {
+    border: 1px dashed #95a5a6;
+    height: 56px;
+    margin-top: 16px;
+    border-radius: 4px;
+    position: relative;
+    font-size: 12px;
+  }
+  
+  .wrapper p {
+    line-height: 31px;
+  } */
+
+  .button {
+    background-color: lightsalmon; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    height: 50px;
+    width: 170px;
+    cursor: pointer;
+}
+
+.button1 {
+  width: 50px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid lightsalmon;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid red;
+}
+.card {
+  border: #2ecc71;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 450px;
+  margin: auto;
+  text-align: center;
+}
+input[type=text] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  color: blue;
+}
+
+#cart{
+  width: 50px;
+  height: 50px;
+  margin-top: -20px;
+  margin-left: -25px;
+}
+
+#delete{
+  width: 30px;
+  height: 30px;
+  /* margin-top: -20px; */
+  margin-left: -3px;
+}
+
+#btnDelete{
+  width: 50px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid lightsalmon;
+}
+
+
+.form-group{
+  width: 305px;
+  height: 25px;
+  margin-left: 15px;
+  margin-top: 40px;
+}
+
+
+.form{
+  border: outset;
+  border-color: red;
+  margin-left: 5px;
+  width: 1345px;
+  height: 850px;
+
+}
+
+.billing-num{
+  margin-left: 10px;
+  margin-top: 12px;
+  -moz-border-radius: 0 3px 0 38px/0 26px 0 4px;
+  border: solid;
+  width: 40px;
+  text-align: center;
+  background-color: darkred;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  border-color: darkred;
+}
+
+.billing-text{
+  margin-left: 60px;
+  margin-top: -30px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+
+#subtopic1{
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.subtopic2{
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.subtopic3{
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.lktRadio{
+  margin-top: 12px;
+  font-size: 15px;
+  /*cursor: wait;*/
+  -moz-opacity:0.2;
+  -khtml-opacity:0.2;
+}
+
+.deliveryInfo{
+  width: 250px;
+}
+
+#first{
+  margin-top: 10px;
+  width: 300px;
+}
+
+#last{
+  width: 150px;
+  margin-left: 170px;
+  margin-top: -40px;
+}
+
+#delFirst{
+  margin-top: 10px;
+  width: 150px;
+}
+
+#delLast{
+  width: 150px;
+  margin-left: 170px;
+  margin-top: -40px;
+}
+
+.deliveryMethod{
+  margin-left: 385px;
+  margin-top: -825px;
+}
+
+.horizontalLine{
+  margin-left: 350px;
+  margin-top: -750px;
+  width: 2px;
+  height: 810px;
+  background-color: black;
+
+}
+
+.preview{
+  margin-left: 770px;
+  margin-top: -627px;
+}
+
+#btnSubmit{
+  width: 300px;
+  height: 40px;
+  margin-left: 30px;
+  margin-top: 100px;
+  background-color: red;
+  border-color: black;
+}
+
+#tblCart{
+  margin-top: 12px;
+  width: 360px;
+  font-size: 12px;
+}
+
+.main{
+    margin-top: -40%;
+    margin-left: 300px;
+}
