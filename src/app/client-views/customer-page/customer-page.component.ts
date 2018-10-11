@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import {Router} from '@angular/router';
 import { RegisterComponent } from '../register/register.component';
@@ -15,10 +15,15 @@ export class CustomerPageComponent implements OnInit {
 
   customer: Customer = new Customer();
   failed: boolean;
+  @ViewChild('btnClose') btnClose : ElementRef; 
 
   constructor(private authService: AuthService,private dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  close(): void{
+    this.btnClose.nativeElement.closeDialog();
   }
 
   loginDb(): void{

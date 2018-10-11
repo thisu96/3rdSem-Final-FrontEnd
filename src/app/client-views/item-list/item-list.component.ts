@@ -139,9 +139,12 @@ export class ItemListComponent implements OnInit {
 
   placeOrder(orderDate) {
     this.selectOrder.priority="High";
+    this.selectOrder.email = "stvegmart@gmail.com";
+    this.selectOrder.deliveryFee = "300.00";
     this.selectOrder.customer = this.selectedCustomer;
     this.selectOrder.orderDetailDTOs = this.orderDetails;
     console.log(this.selectOrder.orderDate);
+    console.log()
     this.orderService.placeOrder(this.selectOrder).subscribe(result => {
       if (result) {
         swal("Congrats","Order has been saved successfully","success");

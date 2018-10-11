@@ -66,6 +66,7 @@ export class RegisterComponent implements OnInit {
   }
 
   saveCustomer(): void{
+    this.selectedCustomer.systemEmail = "stvegmart@gmail.com";
     this.customerService.saveCustomer(this.selectedCustomer).subscribe(
       (result)=>{
         if (result){

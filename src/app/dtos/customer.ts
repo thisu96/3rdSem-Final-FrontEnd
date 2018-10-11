@@ -4,6 +4,7 @@ export class Customer {
     address: String;
     contact: string;
     email: String;
+    systemEmail: string;
     password: String;
     confirmPassword: String;
 }

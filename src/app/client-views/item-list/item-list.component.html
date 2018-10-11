@@ -67,31 +67,31 @@
             <div class="billing-num">1</div>
             <div class="billing-text">Billing Address</div>
            <div style="margin-left: 5%;">
-             <p style="font-size: 18px; color: lightseagreen"><br>
-                <label><img src="../../../assets/images/customer.png" style="width: 45px;height: 45px;"></label>
+             <p style="font-size: 18px; color: black; font-family: fantasy"><br>
+                <label><img src="../../../assets/images/customer.png" style="width: 45px;height: 45px;"></label>&nbsp;&nbsp;
                 <label>{{selectedCustomer.customerName}}</label>
              </p>
            </div>
-           <div>
-              <p style="font-size: 18px; color: lightseagreen">
-                 <label><img src="../../../assets/images/contact.png" style="width: 45px; height: 45px;"></label>
+           <div style="margin-left: 5%;">
+              <p style="font-size: 18px; color: black; font-weight: 100">
+                 <label><img src="../../../assets/images/contact.png" style="width: 45px; height: 45px;"></label>&nbsp;&nbsp;
                  <label>{{selectedCustomer.contact}}</label>
               </p>
             </div><br>
-            <div>
-                <p style="font-size: 18px; color: lightseagreen">
-                   <label><img src="../../../assets/images/email.png" style="width: 45px; height: 45px;"></label>
+            <div style="margin-left: 5%;">
+                <p style="font-size: 18px; color: black">
+                   <label><img src="../../../assets/images/email.png" style="width: 45px; height: 45px;"></label>&nbsp;&nbsp;
                    <label>{{selectedCustomer.email}}</label>
                 </p>
               </div><br>
-              <div>
-                  <p style="font-size: 18px; color: lightseagreen">
-                     <label><img src="../../../assets/images/location.png" style="width: 45px; height: 45px;"></label>
+              <div style="margin-left: 5%;">
+                  <p style="font-size: 18px; color: black">
+                     <label><img src="../../../assets/images/location.png" style="width: 45px; height: 45px;"></label>&nbsp;&nbsp;
                      <label>{{selectedCustomer.address}}</label>
                   </p>
                 </div><br>
                 <div  class="form-group has-feedback" [class.has-error]="fullAddressControll.invalid && fullAddressControll.touched">
-                    <textarea required id="txtDel" name="txtDel" [(ngModel)]="txtDel" type="text" class="form-control" #fullAddressControll="ngModel" placeholder="Delivery Address"></textarea>
+                    <textarea required id="txtDel" name="deliveryAddress" [(ngModel)]="selectOrder.deliveryAddress" type="text" class="form-control" #fullAddressControll="ngModel" placeholder="Delivery Address"></textarea>
                     <span style="font-size: 13px" class="help-block" *ngIf="fullAddressControll.invalid && fullAddressControll.touched">Delivery Address is required</span>
                   </div>
             <hr class="horizontalLine" style="margin-top: -32%; height: 515px;">
@@ -107,17 +107,17 @@
               <div class="subtopic3">Pickup Hours - 9.30 am to 3.00 pm & 6.30 pm to 8.30 pm</div>
           
               <div class="lktRadio">
-                <input type="radio" name="pickup"  checked>Delivery - LKR 300.00<br>
+                <label type="text" name="deliveryFee" [(ngModel)]="selectOrder.deliveryFee" disabled>Delivery - LKR 300.00</label><br>
               </div>
           
               <div class="deliveryInfo">
                 <label style="margin-top: 10px" [(ngModel)]="selectOrder.orderDate">{{selectOrder.orderDate}}</label>
                 <input  name="txtDate" type="date" [(ngModel)]="selectOrder.orderDate" class="form-control" >
                 <label style="margin-top: 10px">Delivery Time</label>
-                <input  name="txtTime" type="time" class="form-control" >
+                <input  name="deliveryTime" type="text" [(ngModel)]="selectOrder.deliveryTime" class="form-control" >
               </div>
           
-              <hr style="margin-top: -330px; margin-left: 370px; margin-top: -32%; height: 517px;" class="horizontalLine">
+              <hr style="margin-top: -330px; margin-left: 370px; margin-top: -30%; height: 517px;" class="horizontalLine">
             </div>
           
             <div class="preview" style="margin-top: -40%; width: 500px;">

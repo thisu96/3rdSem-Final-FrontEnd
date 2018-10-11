@@ -34,10 +34,6 @@ userName = '';
     this.router.navigateByUrl('/news');
   }
 
-  btnClick5 = function(){
-    this.router.navigateByUrl('/item-list');
-  }
-
   btnClick6 = function(){
     this.router.navigateByUrl('/my-account');
   }
