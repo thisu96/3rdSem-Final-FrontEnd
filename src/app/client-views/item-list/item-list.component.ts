@@ -154,4 +154,10 @@ export class ItemListComponent implements OnInit {
       }
     });
   }
+
+  logout(): void{
+    this.authService.logout();
+    localStorage.removeItem('user');
+    location.reload();
+  }
 }

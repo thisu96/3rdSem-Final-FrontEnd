@@ -16,14 +16,14 @@ const appadminroutes: Routes = [
     children: [
       
       {path: 'dashboard', component: DashboardComponent},
-      {path:'manage-item', component: ManageItemComponent, canDeactivate: [ManageItemGuard]},
+      {path:'manage-item', component: ManageItemComponent},
       {path: 'manage-employee', component: ManageEmployeeComponent},
-      {path: 'manage-orders', component: ManageOrdersComponent}
+      {path: 'manage-orders', component: ManageOrdersComponent},
+      {path: '', pathMatch: 'full', redirectTo: '/main/dashboard'}
     ]
   },
-  {path:'sign', component: SignComponent},
-  //{path: 'main', pathMatch: 'full', redirectTo: '/main/sign-page'}
-];
+  {path:'sign', component: SignComponent}
+  ];
 
 @NgModule({
   imports: [

@@ -4,6 +4,7 @@ import { Customer } from '../../dtos/customer';
 import { CustomerService } from '../../services/customer.service';
 import swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +18,7 @@ export class RegisterComponent implements OnInit {
   manuallySelected: boolean = false;
   @ViewChild("frmCustomer") frmCustomer: NgForm;
 
-  constructor(private customerService: CustomerService, private router: Router) {
+  constructor(private customerService: CustomerService, private router: Router, private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -48,6 +49,10 @@ export class RegisterComponent implements OnInit {
   //   }
   // }
 
+  closeWindow(): void{
+    this.dialog.closeAll();
+  }
+
   selectCustomer(customer: Customer): void {
     this.clear();
     this.selectedCustomer = customer;
@@ -72,6 +77,7 @@ export class RegisterComponent implements OnInit {
         if (result){
           swal("Congrats!", "You Sussefully Registerd!", "success")
           this.clear();
+          this.closeWindow();
           this.router.navigateByUrl('/homepage')
           this.clear();
         }else{

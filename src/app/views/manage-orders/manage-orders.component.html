@@ -1,72 +1,42 @@
-<div class="main">
-    <!-- <nav class="navbar navbar-default"> -->
-        <!-- <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar bar1"></span>
-                    <span class="icon-bar bar2"></span>
-                    <span class="icon-bar bar3"></span>
-                </button>
-                <a class="navbar-brand" href="#">MANAGE EMPLOYEE DEATAILS</a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="ti-panel"></i>
-            <p>Stats</p>
-                        </a>
-                    </li>
-                    <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="ti-bell"></i>
-                                <p class="notification">5</p>
-              <p>Notifications</p>
-              <b class="caret"></b>
-                          </a>
-                          <ul class="dropdown-menu">
-                            <li><a href="#">Notification 1</a></li>
-                            <li><a href="#">Notification 2</a></li>
-                            <li><a href="#">Notification 3</a></li>
-                            <li><a href="#">Notification 4</a></li>
-                            <li><a href="#">Another notification</a></li>
-                          </ul>
-                    </li>
-        <li>
-                        <a href="#">
-            <i class="ti-settings"></i>
-            <p>Settings</p>
-                        </a>
-                    </li>
-                </ul>
-  
-            </div>
-        </div>
-    </nav><br> -->
-  <div class="table-responsive" style="width: 550px;">          
+<div class="main" style="margin-top: -45%;">
+    <h3 style="color: lightseagreen">CUSTOMER PLACE ORDER LIST</h3><br>
+    <div>
+      <input type="text" name="searchTerm">
+    </div>
+  <div class="table-responsive" style="width: 97%;">          
     <table class="table">
       <thead>
         <tr>
           <th>Name</th>
-          <th>Quality</th>
-          <th>Description</th>
-          <th>Category</th>
-          <th>qty</th>
-          <th>amount</th>
+          <th>Item Name</th>
+          <th>Order ID</th>
+          <th>Delivery Address</th>
+          <th>Delivery Time</th>
+          <th>Delivery Fee</th>
+          <th>Order Qty</th>
+          <th>Total Amount</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let orderDetail of orderDetails">
-          <td>{{orderDetail.item.itemName}}</td>
-          <td>{{orderDetail.item.quality}}</td>
-          <td>{{orderDetail.item.description}}</td>
-          <td>{{orderDetail.item.category}}</td>
-          <td>{{orderDetail.order_qty}}</td>
-          <td>{{orderDetail.total_amount}}</td>
+        <tr *ngFor="let orderList of orderLists | customerFilter : searchTerm | paginate: { itemsPerPage: 15, currentPage: p }">
+          <td>{{orderList.userName}}</td>
+          <td>{{orderList.itemName}}</td>
+          <td>{{orderList.orderId}}</td>
+          <td>{{orderList.deliveryAddress}}</td>
+          <td>{{orderList.deliveryTime}}</td>
+          <td>{{orderList.deliveryFee}}</td>
+          <td>{{orderList.order_qty}}</td>
+          <td>{{orderList.total_amount}}</td>
           <td><button id="btnDelete"><img  id="delete" src="../assets/images/delete1.png"></button></td>
         </tr>
       </tbody>
+      <tfoot>
+        <tr>
+            <td colspan="4">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </td>
+        </tr>
+        </tfoot>
     </table>
   </div>
   

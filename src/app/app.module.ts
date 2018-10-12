@@ -48,6 +48,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FileService } from './services/file.service';
 import { CategoryFilterPipe } from './filters/category-filter.pipe';
 import { ManageOrdersComponent } from './views/manage-orders/manage-orders.component';
+import { CustomerPipe } from './filters/customer.pipe';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { ManageOrdersComponent } from './views/manage-orders/manage-orders.compo
     SignUpComponent,
     CategoryFilterPipe,
     ManageOrdersComponent,
+    CustomerPipe,
   ],
   imports: [
     BrowserModule,

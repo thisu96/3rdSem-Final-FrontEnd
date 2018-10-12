@@ -1,12 +1,13 @@
 <app-nav-bar></app-nav-bar><br><br><br><br>
 <div style="display: inline-flex">
-    <img src="../../../assets/images/user.png" style="width: 75px;height: 75px;">
+    <!-- <img src="../../../assets/images/user.png" style="width: 75px;height: 75px;"><br> -->
     <h4>WELCOME BACK &nbsp;&nbsp;&nbsp; {{userName}}</h4>
+    <button style="margin-left: 490%;" id="btnDelete" (click)="logout()"><img  id="delete" src="../assets/images/logout.png" style="width: 50px;height: 50px;"></button>
 </div><br>
 <input type="text" placeholder="SEARCH BY CATEGORY" class="form-group" style="width: 300px; margin-left: 10%"
   [(ngModel)]="searchTerm">
 <div>
-  <h4 style="margin-left: 80%; color: green">Items In Your <i class="fa fa-shopping-cart"></i></h4>
+  <!-- <h4 style="margin-left: 80%; color: green">Items In Your <i class="fa fa-shopping-cart"></i></h4> -->
   <h3 class="lables" style="color: lightseagreen; margin-left: 10%">ITEMS LIST</h3>
   <div class="table-responsive">          
     <table class="table" id="tblItemList">
@@ -66,25 +67,25 @@
     
             <div class="billing-num">1</div>
             <div class="billing-text">Billing Address</div>
-           <div style="margin-left: 5%;">
+           <div style="margin-left: 2%;">
              <p style="font-size: 18px; color: black; font-family: fantasy"><br>
                 <label><img src="../../../assets/images/customer.png" style="width: 45px;height: 45px;"></label>&nbsp;&nbsp;
                 <label>{{selectedCustomer.customerName}}</label>
              </p>
            </div>
-           <div style="margin-left: 5%;">
+           <div style="margin-left: 2%;">
               <p style="font-size: 18px; color: black; font-weight: 100">
                  <label><img src="../../../assets/images/contact.png" style="width: 45px; height: 45px;"></label>&nbsp;&nbsp;
                  <label>{{selectedCustomer.contact}}</label>
               </p>
             </div><br>
-            <div style="margin-left: 5%;">
+            <div style="margin-left: 2%;">
                 <p style="font-size: 18px; color: black">
                    <label><img src="../../../assets/images/email.png" style="width: 45px; height: 45px;"></label>&nbsp;&nbsp;
                    <label>{{selectedCustomer.email}}</label>
                 </p>
               </div><br>
-              <div style="margin-left: 5%;">
+              <div style="margin-left: 2%;">
                   <p style="font-size: 18px; color: black">
                      <label><img src="../../../assets/images/location.png" style="width: 45px; height: 45px;"></label>&nbsp;&nbsp;
                      <label>{{selectedCustomer.address}}</label>

@@ -22,8 +22,12 @@ export class CustomerPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  close(): void{
-    this.btnClose.nativeElement.closeDialog();
+  // close(): void{
+  //   this.btnClose.nativeElement.closeDialog();
+  // }
+
+  closeWindow(): void{
+    this.dialog.closeAll();
   }
 
   loginDb(): void{
@@ -31,6 +35,7 @@ export class CustomerPageComponent implements OnInit {
       (result)=>{
         this.failed = !result;
         if(result){
+          this.closeWindow();
           localStorage.setItem('user', this.customer.userName);
           localStorage.setItem('contact', this.customer.contact);
         }
